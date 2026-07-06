@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TV Dashboard</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #image {
+      width: 100vw;
+      height: 100vh;
+      object-fit: fill; /* Stretches image to fill screen entirely */
+      display: block;
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+  <img id="image" src="tbr11.PNG" alt="Power BI Dashboard" />
+
+  <script>
+    const imageElement = document.getElementById('image');
+    const images = ['tbr11.PNG', 'tbr11.PNG'];
+    let currentIndex = 0;
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      imageElement.src = images[currentIndex];
+    }, 20000);
+  </script>
+</body>
+</html>
